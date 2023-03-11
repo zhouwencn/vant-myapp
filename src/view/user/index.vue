@@ -38,16 +38,10 @@
 </template>
 
 <script>
-import { Row, Col, Icon, Cell, CellGroup } from 'vant'
 import Main from '_c/main'
 export default {
   components: {
-    Main,
-    [Row.name]: Row,
-    [Col.name]: Col,
-    [Icon.name]: Icon,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup
+    Main
   },
   methods: {
     toGoods() {

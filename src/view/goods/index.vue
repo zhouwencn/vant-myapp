@@ -3,35 +3,10 @@
 </template>
 
 <script>
-import {
-  Tag,
-  Col,
-  Icon,
-  Cell,
-  CellGroup,
-  Swipe,
-  Toast,
-  SwipeItem,
-  GoodsAction,
-  GoodsActionIcon,
-  GoodsActionButton,
-  NavBar
-} from 'vant'
 import Main from '_c/main'
 export default {
   components: {
-    Main,
-    [Tag.name]: Tag,
-    [Col.name]: Col,
-    [Icon.name]: Icon,
-    [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup,
-    [Swipe.name]: Swipe,
-    [SwipeItem.name]: SwipeItem,
-    [GoodsAction.name]: GoodsAction,
-    [GoodsActionIcon.name]: GoodsActionIcon,
-    [GoodsActionButton.name]: GoodsActionButton,
-    [NavBar.name]: NavBar
+    Main
   },
 
   data() {
@@ -59,7 +34,7 @@ export default {
     },
 
     sorry() {
-      Toast('暂无后续逻辑~')
+      this.$toast('暂无后续逻辑~')
     }
   }
 }

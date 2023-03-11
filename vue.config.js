@@ -1,16 +1,14 @@
-const autoprefixer = require('autoprefixer');
-const pxtorem = require('postcss-pxtorem');
+const autoprefixer = require('autoprefixer')
+const pxtorem = require('postcss-pxtorem')
 const path = require('path')
 
-const resolve = dir => {
+const resolve = (dir) => {
   return path.join(__dirname, dir)
 }
 module.exports = {
   lintOnSave: false,
   outputDir: 'myapp',
-  publicPath: process.env.NODE_ENV === 'production'
-  ? '/myapp/'
-  : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/myapp/' : '/',
   css: {
     loaderOptions: {
       postcss: {
@@ -30,9 +28,17 @@ module.exports = {
           })
         ]
       }
+      // less: {
+      //   modifyVars: {
+      //     // 直接覆盖变量
+      //     'nav-bar-text-color': 'red'
+      //     // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
+      //     // hack: `true; @import "your-less-file-path.less";`
+      //   }
+      // }
     }
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.resolve.alias
       .set('@', resolve('src')) // key,value自行定义，比如.set('@@', resolve('src/components'))
       .set('_c', resolve('src/components'))
@@ -45,4 +51,4 @@ module.exports = {
       }
     }
   }
-};
+}

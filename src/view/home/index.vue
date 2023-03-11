@@ -28,60 +28,54 @@
 </template>
 
 <script>
-import { Tabbar, TabbarItem, Field, Form, Button } from "vant";
-import { getUserInfo, getRequest } from "@/api/user";
-import Main from "_c/main";
+import { getUserInfo, getRequest } from '@/api/user'
+import Main from '_c/main'
 class Person {
   constructor(name, age, address) {
-    this.username = name;
-    this.age = age;
-    this.address = address;
+    this.username = name
+    this.age = age
+    this.address = address
   }
 }
 export default {
   components: {
-    Main,
-    [Tabbar.name]: Tabbar,
-    [TabbarItem.name]: TabbarItem,
-    [Field.name]: Field,
-    [Form.name]: Form,
-    [Button.name]: Button,
+    Main
   },
   data() {
     return {
       active: 0,
       userInfo: {},
-      name: "jack",
-      address: "CN",
-      request: false,
-    };
+      name: 'jack',
+      address: 'CN',
+      request: false
+    }
   },
   created() {
-    this.getUserInfo();
+    this.getUserInfo()
   },
   methods: {
     getUserInfo() {
-      const person = new Person("张三", 18, "北京");
+      const person = new Person('张三', 18, '北京')
       getUserInfo(person).then((res) => {
-        this.userInfo = res;
-      });
+        this.userInfo = res
+      })
     },
     getRequest() {
       const data = {
         name: this.name,
-        address: this.address,
-      };
+        address: this.address
+      }
       getRequest(data).then(() => {
-        this.request = true;
+        this.request = true
         setTimeout(() => {
-          this.request = false;
-        }, 3000);
-      });
-    },
-  },
-};
+          this.request = false
+        }, 3000)
+      })
+    }
+  }
+}
 </script>
-<style lang='less' scoped>
+<style lang="less" scoped>
 .head {
   font-size: 37.5px;
 }

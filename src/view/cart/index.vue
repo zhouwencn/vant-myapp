@@ -140,7 +140,7 @@ export default {
     },
 
     onSubmit() {
-      Toast('点击结算')
+      this.$toast('点击结算')
     }
   }
 }
