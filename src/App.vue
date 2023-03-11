@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 body {
   font-size: 16px;
   background-color: #ffffff;

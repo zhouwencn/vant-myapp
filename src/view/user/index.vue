@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import { Row, Col, Icon, Cell, CellGroup } from "vant";
-import Main from "_c/main";
+import { Row, Col, Icon, Cell, CellGroup } from 'vant'
+import Main from '_c/main'
 export default {
   components: {
     Main,
@@ -47,17 +47,17 @@ export default {
     [Col.name]: Col,
     [Icon.name]: Icon,
     [Cell.name]: Cell,
-    [CellGroup.name]: CellGroup,
+    [CellGroup.name]: CellGroup
   },
   methods: {
     toGoods() {
-      this.$router.push("/goodsInfo");
-    },
-  },
-};
+      this.$router.push('/goodsInfo')
+    }
+  }
+}
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .user {
   &-poster {
     width: 100%;

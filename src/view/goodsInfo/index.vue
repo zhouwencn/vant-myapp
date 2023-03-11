@@ -1,12 +1,10 @@
 <template>
   <div class="wrapper">
-    <van-nav-bar
-      left-arrow
-      title="My App"
-      fixed
-      placeholder
-      @click-left="back"
-    />
+    <van-nav-bar title="My App" fixed placeholder @click-left="back">
+      <template #left>
+        <van-icon name="arrow-left" size="22" />
+      </template>
+    </van-nav-bar>
     <div class="goods">
       <van-swipe class="goods-swipe" :autoplay="3000">
         <van-swipe-item v-for="thumb in goods.thumb" :key="thumb">
@@ -70,9 +68,9 @@ import {
   GoodsAction,
   GoodsActionIcon,
   GoodsActionButton,
-  NavBar,
-} from "vant";
-import Main from "_c/main";
+  NavBar
+} from 'vant'
+import Main from '_c/main'
 export default {
   components: {
     Main,
@@ -86,56 +84,46 @@ export default {
     [GoodsAction.name]: GoodsAction,
     [GoodsActionIcon.name]: GoodsActionIcon,
     [GoodsActionButton.name]: GoodsActionButton,
-    [NavBar.name]: NavBar,
+    [NavBar.name]: NavBar
   },
 
   data() {
     return {
       goods: {
-        title: "美国伽力果（约680g/3个）",
+        title: '美国伽力果（约680g/3个）',
         price: 2680,
-        express: "免运费",
+        express: '免运费',
         remain: 19,
         thumb: [
-          "https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg",
-          "https://img.yzcdn.cn/public_files/2017/10/24/1791ba14088f9c2be8c610d0a6cc0f93.jpeg",
-        ],
-      },
-    };
+          'https://img.yzcdn.cn/public_files/2017/10/24/e5a5a02309a41f9f5def56684808d9ae.jpeg',
+          'https://img.yzcdn.cn/public_files/2017/10/24/1791ba14088f9c2be8c610d0a6cc0f93.jpeg'
+        ]
+      }
+    }
   },
 
   methods: {
     formatPrice() {
-      return "¥" + (this.goods.price / 100).toFixed(2);
+      return '¥' + (this.goods.price / 100).toFixed(2)
     },
 
     onClickCart() {
-      this.$router.push("cart");
+      this.$router.push('cart')
     },
 
     sorry() {
-      Toast("暂无后续逻辑~");
+      Toast('暂无后续逻辑~')
     },
     back() {
-      this.$router.go(-1);
-    },
-  },
-};
+      this.$router.go(-1)
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
-// @pre-primary-color: #f00;
-// .wrapper {
-//   --pirmary-color: tint(@pre-primary-color, 20%);
-//   @primary: var(--pirmary-color);
-//   background: @primary;
-// }
-</style>
-<style lang="less">
 .wrapper {
-  min-height: 100%;
+  height: 100%;
   .goods {
-    // margin: 0 0 80px;
-    height: 100%;
     margin-bottom: 80px;
     &-swipe {
       img {
