@@ -95,7 +95,7 @@ export default {
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .wrapper {
   height: 100%;
 

@@ -28,15 +28,10 @@
 </template>
 
 <script>
-import { Checkbox, CheckboxGroup, Card, SubmitBar, Toast } from 'vant'
 import Main from '_c/main'
 export default {
   components: {
-    Main,
-    [Card.name]: Card,
-    [Checkbox.name]: Checkbox,
-    [SubmitBar.name]: SubmitBar,
-    [CheckboxGroup.name]: CheckboxGroup
+    Main
   },
 
   data() {
@@ -146,7 +141,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 .van-submit-bar {
   bottom: 50px;
 }
