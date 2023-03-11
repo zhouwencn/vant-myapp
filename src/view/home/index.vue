@@ -28,13 +28,13 @@
 </template>
 
 <script>
-import { getUserInfo, getRequest } from '@/api/user'
-import Main from '_c/main'
+import { getUserInfo, getRequest } from "@/api/user";
+import Main from "_c/main";
 class Person {
   constructor(name, age, address) {
-    this.username = name
-    this.age = age
-    this.address = address
+    this.username = name;
+    this.age = age;
+    this.address = address;
   }
 }
 export default {
@@ -45,36 +45,37 @@ export default {
     return {
       active: 0,
       userInfo: {},
-      name: 'jack',
-      address: 'CN',
+      name: "jack",
+      address: "CN",
       request: false
-    }
+    };
   },
   created() {
-    this.getUserInfo()
+    this.getUserInfo();
   },
   methods: {
     getUserInfo() {
-      const person = new Person('张三', 18, '北京')
+      const person = new Person("张三", 18, "北京");
       getUserInfo(person).then((res) => {
-        this.userInfo = res
-      })
+        this.userInfo = res;
+      });
     },
     getRequest() {
       const data = {
         name: this.name,
         address: this.address
-      }
+      };
       getRequest(data).then(() => {
-        this.request = true
+        this.request = true;
         setTimeout(() => {
-          this.request = false
-        }, 3000)
-      })
+          this.request = false;
+        }, 3000);
+      });
     }
   }
-}
+};
 </script>
+<style lang="less"></style>
 <style lang="less" scoped>
 .head {
   font-size: 37.5px;
