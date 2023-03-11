@@ -38,17 +38,17 @@
 </template>
 
 <script>
-import Main from '_c/main'
+import Main from "_c/main";
 export default {
   components: {
     Main
   },
   methods: {
     toGoods() {
-      this.$router.push('/goodsInfo')
+      this.$router.push("/goodsInfo");
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>
