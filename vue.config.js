@@ -47,7 +47,9 @@ module.exports = {
           // "button-info-background-color": "#ff0000"
           // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
           // hack: `true; @import "your-less-file-path.less";`
-          hack: `true; @import "${path.resolve(
+          // 其实这块不一定是hack，任何的key都行，也不是说一定要是ture;，最重要的其实是true后面的分号
+          // 来自 https://stackoverflow.com/questions/60809336/customizing-ant-designs-theme-what-exactly-is-that-hack-key-in-the-modifyva/65715711#65715711
+          'any_word_you_like': `; @import "${path.resolve(
             __dirname,
             "./src/styles/index.less"
           )}";`
